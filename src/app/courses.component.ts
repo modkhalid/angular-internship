@@ -5,11 +5,9 @@ import { EmailService } from './email.service';
 @Component({
     selector: 'courses',
     template: `
-               <div (click)="onClick()">
-                    <button (click)="onAnotherClick($event)">
-                        "hi click me
-                    </button>
-                </div>
+               <input type="text" (keyup.enter)="onKeyup()">
+               <input type="text" (keyup)="onKeyup($event)">
+               
                 
     `
 })
@@ -17,13 +15,11 @@ import { EmailService } from './email.service';
 export class CoursesComponent{
     // red='red'
     // isActive=false
-    counter=0;
-    onClick=()=>{
-        console.log("div was clicked"+this.counter)
-        this.counter++;
-    }
-    onAnotherClick=($event)=>{
-        $event.stopPropagation()
-        console.log("button was clicked")
+    onKeyup=($event?:any)=>{
+        if($event == undefined){
+            console.log("hi eneter")
+        }else{
+            console.log("jkdsfhjksdg"+$event.keyCode)
+        }
     }
 }
