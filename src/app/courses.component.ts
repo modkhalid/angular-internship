@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CourseService } from './course.service';
+import { EmailService } from './email.service';
 
 @Component({
     selector: 'courses',
@@ -10,7 +11,10 @@ import { CourseService } from './course.service';
                         {{course}}
                     </li>
                 </ul>
-                
+                <img src={{src}}/>
+                <img [src]='src'/>
+                <p [attr.id]='clas'>hi</p>
+                <button class ="btn btn-success btn-lg">hi click me</button>
              `
 })
 
@@ -18,7 +22,9 @@ export class CoursesComponent{
     title="list of courses"
     // courses=['angular','ionic','react native','javascript']
     courses;
-    constructor(service:CourseService){
+    clas
+    src='http://lorempixel.com/400/200';
+    constructor(service:CourseService,l:EmailService){
         this.courses=service.getCourses()
     }
 }

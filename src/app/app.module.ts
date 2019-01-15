@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses.component';
 import { CourseComponent } from './course/course.component';
 import { CourseService } from './course.service';
+import { EmailService } from './email.service';
 
 @NgModule({
   declarations: [
@@ -15,10 +16,11 @@ import { CourseService } from './course.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
-    CourseService
+    CourseService,
+    EmailService,
   ],
   bootstrap: [AppComponent]
 })
