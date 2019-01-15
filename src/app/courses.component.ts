@@ -5,8 +5,8 @@ import { EmailService } from './email.service';
 @Component({
     selector: 'courses',
     template: `
-               <input type="text" (keyup.enter)="onKeyup()">
-               <input type="text" (keyup)="onKeyup($event)">
+               <input #email type="text" (keyup.enter)="onKeyup(email.value)">
+           
                
                 
     `
@@ -15,11 +15,7 @@ import { EmailService } from './email.service';
 export class CoursesComponent{
     // red='red'
     // isActive=false
-    onKeyup=($event?:any)=>{
-        if($event == undefined){
-            console.log("hi eneter")
-        }else{
-            console.log("jkdsfhjksdg"+$event.keyCode)
-        }
+    onKeyup=(val)=>{
+        console.log(val)
     }
 }
