@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular app';
+  // post={
+  //   isFavourite:true,
+  //   title:"khalid"
+  // }
+  // name="modkhalid";
+  name="mod khalid"
+  isFavorite=true
 }
-// jhdfkgdfjkgh

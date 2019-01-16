@@ -9,13 +9,15 @@ import { CourseComponent } from './course/course.component';
 import { CourseService } from './course.service';
 import { EmailService } from './email.service';
 import { SummaryPipe } from './summary.pipe';
+import { FavouriteComponent } from './favourite/favourite.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
     CourseComponent,
-    SummaryPipe
+    SummaryPipe,
+    FavouriteComponent
     
   ],
   imports: [
