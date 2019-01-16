@@ -4,18 +4,15 @@ import { EmailService } from './email.service';
 
 @Component({
     selector: 'courses',
-    template: `
-               <input [value]="val" type="text" (keyup.enter)="val=$event.target.value;onKeyup()">
-           
-               <input [(ngModel)]="val" type="text" (keyup)="onKeyup()"/>
+    template: `<h1>{{text| summary:'50'}}</h1>
+              
                 
     `
 })
 
 export class CoursesComponent{
-   val=""
-    onKeyup=()=>{
-        // this.val=val+"  $";
-        console.log(this.val)
-    }
+   text=`
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam quisquam eligendi dignissimos dolore inventore saepe ratione cumque harum quae libero itaque fugiat voluptatem molestias doloribus incidunt, porro facere nam nobis.
+    
+   `
 }

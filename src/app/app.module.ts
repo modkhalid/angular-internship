@@ -8,17 +8,19 @@ import { CoursesComponent } from './courses.component';
 import { CourseComponent } from './course/course.component';
 import { CourseService } from './course.service';
 import { EmailService } from './email.service';
+import { SummaryPipe } from './summary.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
     CourseComponent,
+    SummaryPipe
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // FormsModule,
     FormsModule
   ],
   providers: [
