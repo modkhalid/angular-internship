@@ -4,6 +4,15 @@ import { Component, OnInit,Input,Output,EventEmitter} from '@angular/core';
   selector: 'app-favorite',
   templateUrl: './favourite.component.html',
   styleUrls: ['./favourite.component.css'],
+  styles:[
+    `
+      .btn-mod{
+        color:white;
+        background-color: black;
+      }
+    `
+  ],
+  
   // inputs:['isFavorite']
 })
 export class FavouriteComponent implements OnInit {
