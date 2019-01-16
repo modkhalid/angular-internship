@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { testInterface } from './favourite/favourite.component';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,9 @@ export class AppComponent {
   title = 'Angular app';
   name="mod khalid"
   isFavorite=true
-  // onChange=()=>{
-  //   console.log("change occur"+this.name);
-  // }
-  message="";
+  onChange=(obj:testInterface)=>{
+    // console.log("change occur"+this.name);
+    console.log(obj)
+  }
+  // message="";
 }
