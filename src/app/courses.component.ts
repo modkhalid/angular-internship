@@ -5,17 +5,17 @@ import { EmailService } from './email.service';
 @Component({
     selector: 'courses',
     template: `
-               <input #email type="text" (keyup.enter)="onKeyup(email.value)">
+               <input [value]="val" type="text" (keyup.enter)="val=$event.target.value;onKeyup()">
            
-               
+               <input [(ngModel)]="val" type="text" (keyup)="onKeyup()"/>
                 
     `
 })
 
 export class CoursesComponent{
-    // red='red'
-    // isActive=false
-    onKeyup=(val)=>{
-        console.log(val)
+   val=""
+    onKeyup=()=>{
+        // this.val=val+"  $";
+        console.log(this.val)
     }
 }
