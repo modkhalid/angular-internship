@@ -4,4 +4,12 @@
 
  <!-- <input type="checkbox" name="click" id="12" [isFavorite]="post.isFavorite">check it -->
  <!-- <app-favorite [isFavorite]="isFavorite"></app-favorite> -->
- <app-favorite [name]="name"></app-favorite>
+ <app-favorite [name]="name" (change)="message=$event" >
+
+ </app-favorite>
+ <!-- <h1 (change)="onChange()">hello mod khalid</h1>
+ -->
+
+<!-- <input type="text" (change)="onChange()"/> -->
+<!-- {{x}}ljkhdf -->
+{{message}}
