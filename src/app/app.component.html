@@ -54,6 +54,6 @@
     </div>
 </div> -->
 
-<div *ngFor="let course of courses;last as i">
-    <span *ngIf="i">bolder</span> - {{course.name}} id: {{course.id}}
+<div *ngFor="let course of courses;even as isEven">
+     - {{course.name}} id: {{course.id}} <span *ngIf="isEven">(even)</span>
 </div>
