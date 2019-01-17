@@ -54,6 +54,6 @@
     </div>
 </div> -->
 
-<div *ngFor="let course of courses;first as i">
+<div *ngFor="let course of courses;last as i">
     <span *ngIf="i">bolder</span> - {{course.name}} id: {{course.id}}
 </div>
