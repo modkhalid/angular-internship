@@ -19,9 +19,13 @@ export class AppComponent {
   // viewList=""
   // courses:number[]=[];em
   // courses.
+  counter=3;
   courses=[
     {name:"khalid",id:45},
     {name:"annas",id:6},
     {name:"zain",id:68}
   ]
+  onClick=()=>{
+    this.courses.push({name:"name",id:++this.counter})
+  }
 }
