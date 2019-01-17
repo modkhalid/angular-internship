@@ -28,4 +28,8 @@ export class AppComponent {
   onClick=()=>{
     this.courses.push({name:"name",id:++this.counter})
   }
+  onRemove=(course)=>{
+    let index=this.courses.indexOf(course)
+    this.courses.splice(index,1);
+  }
 }

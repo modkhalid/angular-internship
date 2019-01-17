@@ -56,6 +56,9 @@
 <button class="btn btn-success" (click)="onClick()">Add</button>
 <div *ngFor="let course of courses;index as i">
      {{i}}- {{course.name}} id: {{course.id}}
+     <button class="btn btn-danger" (click)="onRemove(course)">
+        remove
+     </button>
       
 
 </div>
