@@ -16,7 +16,12 @@ export class AppComponent {
   // }
   // // message="";
   // courses=[];
-  viewList=""
+  // viewList=""
   // courses:number[]=[];em
   // courses.
+  courses=[
+    {name:"khalid",id:45},
+    {name:"annas",id:6},
+    {name:"zain",id:68}
+  ]
 }

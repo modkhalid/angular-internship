@@ -33,7 +33,7 @@
         list has nono courses
     </h1>
 </div> -->
-<ul class="nav">
+<!-- <ul class="nav">
         <li class="nav-item ">
           <a class="nav-link " [class.bg-primary]="viewList=='two'" (click)="viewList='two'">two</a>
         </li>
@@ -49,7 +49,11 @@
     <div *ngSwitchCase="'two'">
         two clicked
     </div>
-    <div *ngSwitchDefault>
+    <div *ngSwitchgit Default>
         default para
     </div>
+</div> -->
+
+<div *ngFor="let course of courses;">
+    {{course.name}} id: {{course.id}}
 </div>
