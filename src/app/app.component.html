@@ -60,7 +60,7 @@
       
 
 </div> -->
-<span
+<!-- <span
 class="btn"
 [ngClass]="{
     'btn-success':isSelected,
@@ -69,4 +69,11 @@ class="btn"
 >
 Done
 
-</span>
+</span> -->
+<button
+[style.color]="isSelected?'black':'red'"
+[style.backgroundColor]="isSelected?'red':'black'"
+(click)="onClick()"
+>
+click
+</button>
