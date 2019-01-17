@@ -54,6 +54,9 @@
     </div>
 </div> -->
 
-<div *ngFor="let course of courses;even as isEven">
-     - {{course.name}} id: {{course.id}} <span *ngIf="isEven">(even)</span>
+<div *ngFor="let course of courses;even as isEven;odd as isOdd">
+     - {{course.name}} id: {{course.id}}
+      <span *ngIf="isEven;else odd">(even)</span>
+     <ng-template #odd>(odd)</ng-template>
+
 </div>
