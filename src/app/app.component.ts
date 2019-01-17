@@ -15,7 +15,8 @@ export class AppComponent {
   //   console.log(obj)
   // }
   // // message="";
-  courses=[];
+  // courses=[];
+  viewList=""
   // courses:number[]=[];em
   // courses.
 }

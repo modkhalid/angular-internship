@@ -25,11 +25,31 @@
 <ng-template #noList>
     <h1>List has no courses</h1>
 </ng-template> -->
-<div [hidden]="courses.length==0">
+<!-- <div [hidden]="courses.length==0">
     <h1>list has courses</h1>
 </div>
 <div [hidden]="courses.length>0">
     <h1>
         list has nono courses
     </h1>
+</div> -->
+<ul class="nav">
+        <li class="nav-item ">
+          <a class="nav-link " [class.bg-primary]="viewList=='two'" (click)="viewList='two'">two</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [class.bg-primary]="viewList=='one'"  (click)="viewList='one'">one</a>
+        </li>
+        
+      </ul>
+<div [ngSwitch]="viewList">
+    <div *ngSwitchCase="'one'">
+        one clicked
+    </div>
+    <div *ngSwitchCase="'two'">
+        two clicked
+    </div>
+    <div *ngSwitchDefault>
+        default para
+    </div>
 </div>
