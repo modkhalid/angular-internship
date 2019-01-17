@@ -11,6 +11,7 @@ import { EmailService } from './email.service';
 import { SummaryPipe } from './summary.pipe';
 import { FavouriteComponent } from './favourite/favourite.component';
 import { PanelComponent } from './panel/panel.component';
+import { InputDirective } from './input.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PanelComponent } from './panel/panel.component';
     CourseComponent,
     SummaryPipe,
     FavouriteComponent,
-    PanelComponent
+    PanelComponent,
+    InputDirective
     
   ],
   imports: [
