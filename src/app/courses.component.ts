@@ -4,8 +4,7 @@ import { EmailService } from './email.service';
 
 @Component({
     selector: 'courses',
-    template: `<h1>{{text| summary:'50'}}</h1>
-      {{pd}}
+    template: `
               
                 
     `
