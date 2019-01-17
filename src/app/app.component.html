@@ -53,10 +53,20 @@
         default para
     </div>
 </div> -->
-<button class="btn btn-success" (click)="onClick()">Load</button>
+<!-- <button class="btn btn-success" (click)="onClick()">Load</button>
 <div *ngFor="let course of courses;index as i;trackBy:trackCourse">
      {{i}}- {{course.name}} id: {{course.id}}
      
       
 
-</div>
+</div> -->
+<span
+class="btn"
+[ngClass]="{
+    'btn-success':isSelected,
+    'btn-danger':!isSelected
+}" (click)="onClick()"
+>
+Done
+
+</span>

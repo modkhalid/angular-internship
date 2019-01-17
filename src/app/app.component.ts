@@ -19,19 +19,19 @@ export class AppComponent {
   // viewList=""
   // courses:number[]=[];em
   // courses.
-  counter=3;
-  courses;
-  onClick=()=>{
-    // this.courses.push({name:"name",id:++this.counter})
-    this.courses=[
-      {name:"khalid",id:45},
-      {name:"annas",id:6},
-      {name:"zain",id:68}
-    ]
-  }
-  trackCourse=(index,course)=>{
-    return course?course.id:undefined;
-  }
+  // counter=3;
+  // courses;
+  // onClick=()=>{
+  //   // this.courses.push({name:"name",id:++this.counter})
+  //   this.courses=[
+  //     {name:"khalid",id:45},
+  //     {name:"annas",id:6},
+  //     {name:"zain",id:68}
+  //   ]
+  // }
+  // trackCourse=(index,course)=>{
+  //   return course?course.id:undefined;
+  // }
   // onRemove=(course)=>{
   //   let index=this.courses.indexOf(course)
   //   this.courses.splice(index,1);
@@ -39,4 +39,8 @@ export class AppComponent {
   // onUpdate=(course)=>{
   //   course.name="Update name"
   // }
+  isSelected:boolean=true;
+  onClick(){
+    this.isSelected=!this.isSelected;
+  }
 }
