@@ -11,7 +11,7 @@ export class InputDirective {
   constructor(private el:ElementRef) { 
     
   }
-  @Input('format') format;
+  @Input('appInput') format;
   @HostListener('blur') onBlur=()=>{
     // console.log("Blur event occer")
     // let value:string=this.el.nativeElement.value;
