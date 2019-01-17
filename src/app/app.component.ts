@@ -20,19 +20,23 @@ export class AppComponent {
   // courses:number[]=[];em
   // courses.
   counter=3;
-  courses=[
-    {name:"khalid",id:45},
-    {name:"annas",id:6},
-    {name:"zain",id:68}
-  ]
+  courses;
   onClick=()=>{
-    this.courses.push({name:"name",id:++this.counter})
+    // this.courses.push({name:"name",id:++this.counter})
+    this.courses=[
+      {name:"khalid",id:45},
+      {name:"annas",id:6},
+      {name:"zain",id:68}
+    ]
   }
-  onRemove=(course)=>{
-    let index=this.courses.indexOf(course)
-    this.courses.splice(index,1);
+  trackCourse=(index,course)=>{
+    return course?course.id:undefined;
   }
-  onUpdate=(course)=>{
-    course.name="Update name"
-  }
+  // onRemove=(course)=>{
+  //   let index=this.courses.indexOf(course)
+  //   this.courses.splice(index,1);
+  // }
+  // onUpdate=(course)=>{
+  //   course.name="Update name"
+  // }
 }
