@@ -1,4 +1,4 @@
-<!-- <h1>hello worls</h1> -->
+<!-- <h1>hello worls</h1>
 <courses [parentData]="name"></courses>
 <app-course></app-course>
 
@@ -6,13 +6,22 @@
 
  </app-favorite>
 
-<!-- {{message}} -->
+{{message}}
 <bootstrap-panel>
-<div class="header">
+<ng-container class="header">
     khlid this is heading
-</div>
-<div class="body">
+</ng-container>
+<ng-container class="body">
     <h1>this is body</h1>
     <p>this is [aragraph inside body</p>
+</ng-container>
+</bootstrap-panel> -->
+<div *ngIf="courses.length>0;then list else noList">
+
 </div>
-</bootstrap-panel>
+<ng-template #list>
+    <h1>List have courses.</h1>
+</ng-template>
+<ng-template #noList>
+    <h1>List has no courses</h1>
+</ng-template>

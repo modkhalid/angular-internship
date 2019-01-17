@@ -7,12 +7,15 @@ import { testInterface } from './favourite/favourite.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular app';
-  name="mod khalid"
-  isFavorite=true
-  onChange=(obj:testInterface)=>{
-    // console.log("change occur"+this.name);
-    console.log(obj)
-  }
-  // message="";
+  // title = 'Angular app';
+  // name="mod khalid"
+  // isFavorite=true
+  // onChange=(obj:testInterface)=>{
+  //   // console.log("change occur"+this.name);
+  //   console.log(obj)
+  // }
+  // // message="";
+  courses=[1,2,3];
+  // courses:number[]=[];em
+  // courses.
 }
