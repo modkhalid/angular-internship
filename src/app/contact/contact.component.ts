@@ -11,5 +11,6 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
   }
+  onChange(val){ console.log(val)}
 
 }
