@@ -12,6 +12,7 @@ import { SummaryPipe } from './summary.pipe';
 import { FavouriteComponent } from './favourite/favourite.component';
 import { PanelComponent } from './panel/panel.component';
 import { InputDirective } from './input.directive';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { InputDirective } from './input.directive';
     SummaryPipe,
     FavouriteComponent,
     PanelComponent,
-    InputDirective
+    InputDirective,
+    ContactComponent
     
   ],
   imports: [
