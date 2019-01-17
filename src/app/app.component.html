@@ -16,7 +16,7 @@
     <p>this is [aragraph inside body</p>
 </ng-container>
 </bootstrap-panel> -->
-<div *ngIf="courses.length>0;then list else noList">
+<!-- <div *ngIf="courses.length>0;then list else noList">
 
 </div>
 <ng-template #list>
@@ -24,4 +24,12 @@
 </ng-template>
 <ng-template #noList>
     <h1>List has no courses</h1>
-</ng-template>
+</ng-template> -->
+<div [hidden]="courses.length==0">
+    <h1>list has courses</h1>
+</div>
+<div [hidden]="courses.length>0">
+    <h1>
+        list has nono courses
+    </h1>
+</div>

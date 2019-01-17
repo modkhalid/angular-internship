@@ -15,7 +15,7 @@ export class AppComponent {
   //   console.log(obj)
   // }
   // // message="";
-  courses=[1,2,3];
+  courses=[];
   // courses:number[]=[];em
   // courses.
 }
