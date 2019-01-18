@@ -3,11 +3,11 @@
         <div class="form-group">
           <label for="firstName">First name</label>
           <input required minlength="5" maxlength="10" pattern="banana" ngModel name="firstName" #firstName="ngModel" (change)="onChange(firstName)" type="text" class="form-control" id="firstName">
-          <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid" >
+          <!-- <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid" >
             <div *ngIf="firstName.touched && !firstName.valid">Invalid Input</div>
             <div *ngIf="firstName.errors?.minlength">minlength {{firstName.errors?.minlength?.requiredLength}} required but actual {{firstName.errors?.minlength?.actualLength}} </div>
             <div *ngIf="firstName.errors?.pattern">Unmached pattern</div>
-          </div>
+          </div> -->
         </div>
         <div class="form-group">
           <label for="desc">Description</label>
