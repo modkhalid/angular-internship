@@ -1,6 +1,6 @@
 <div class="container">
     <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" >
-        <div ngModelGroup #contact="ngModelGroup">
+        <div ngModelGroup="contact" #contact="ngModelGroup">
           <div *ngIf="!contact.valid">
               ...
           </div>
@@ -47,7 +47,15 @@
                   (change)="onChange(comment)">
                 </textarea>
               </div>
+              <div class="form-group">
+                  <label>
+                    <input type="checkbox" ngModel name="subcribe">
+                    Subcribe ouremil sender function
+                  </label>
+              </div>
         </div>
-        <input type="submit" class="btn btn-primary" value="Submit">
+        
+        <input type="submit" class="btn btn-primary" value="Submit" [disabled]="!myForm.valid">
+        <p>{{myForm.value|json}}</p>
       </form>
 </div>
