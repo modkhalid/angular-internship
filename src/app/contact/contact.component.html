@@ -1,7 +1,7 @@
 <div class="container">
     <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" >
         <div ngModelGroup="contact" #contact="ngModelGroup">
-          <div *ngIf="!contact.valid">
+          <div *ngIf="!contact.valid && contact.touched">
               ...
           </div>
             <div class="form-group">
@@ -64,6 +64,12 @@
                   <option value="select 4">select 4</option>
                   <option value="select 5">select 5</option>
                 </select>
+              </div>
+              <div class="form-group" *ngFor="let contact of contacts">
+                <label >
+                  <input ngModel type="radio" name="contactMethod1" [value]="contact.id">
+                  {{contact.name}}
+                </label>
               </div>
         </div>
         
