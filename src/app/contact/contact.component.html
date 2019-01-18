@@ -53,6 +53,18 @@
                     Subcribe ouremil sender function
                   </label>
               </div>
+              <div class="form-group">
+                <label for="contactMethod">
+                  contact Method
+                </label>
+                <select ngModel name="contactMethod" id="contactMethod">
+                  <option selected value="select 1">select 1</option>
+                  <option value="select 2">select 2</option>
+                  <option value="select 3">select 3</option>
+                  <option value="select 4">select 4</option>
+                  <option value="select 5">select 5</option>
+                </select>
+              </div>
         </div>
         
         <input type="submit" class="btn btn-primary" value="Submit" [disabled]="!myForm.valid">
