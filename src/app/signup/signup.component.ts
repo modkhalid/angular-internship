@@ -18,6 +18,8 @@ export class SignupComponent implements OnInit {
   //   username:new FormControl(),
   //   password:new FormControl()
   // });
+  get username(){return this.myGroup.get('username');}
+  get password(){return this.myGroup.get('password');}
  
  
 
