@@ -1,5 +1,5 @@
 <div class="container">
-    <form>
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" >
         <div class="form-group">
           <label for="firstName">First name</label>
           <input
@@ -36,11 +36,16 @@
             id="desc" 
             cols="30" 
             rows="10" 
-            class="form-control">
+            class="form-control"
+            ngModel
+            #comment='ngModel'
+            name="comment"
+            (change)="onChange(comment)">
           </textarea>
         </div>
-        <button class="btn btn-primary">
+        <!-- <input type='submit' class="btn btn-primary">
           Submit
-        </button>
+        </button> -->
+        <input type="submit" class="btn btn-primary" value="Submit">
       </form>
 </div>
