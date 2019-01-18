@@ -2,7 +2,8 @@
     <form>
         <div class="form-group">
           <label for="firstName">First name</label>
-          <input ngModel name="firstName" #firstName (change)="onChange(firstName.value)" type="text" class="form-control" id="firstName">
+          <input required ngModel name="firstName" #firstName="ngModel" (change)="onChange(firstName)" type="text" class="form-control" id="firstName">
+          <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">Please input name</div>
         </div>
         <div class="form-group">
           <label for="desc">Description</label>
