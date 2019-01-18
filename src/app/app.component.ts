@@ -39,8 +39,8 @@ export class AppComponent {
   // onUpdate=(course)=>{
   //   course.name="Update name"
   // }
-  isSelected:boolean=true;
-  onClick(){
-    this.isSelected=!this.isSelected;
-  }
+  // isSelected:boolean=true;
+  // onClick(){
+  //   this.isSelected=!this.isSelected;
+  // }
 }

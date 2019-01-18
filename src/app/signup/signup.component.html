@@ -7,6 +7,11 @@
           type="text" 
           class="form-control">
   </div>
+  <div class="alert alert-danger" 
+  *ngIf="myGroup.get('username').touched && !myGroup.get('username').valid"
+  >
+      please provideusername whith min length of 5
+  </div>
   <div class="form-group">
       <label for="password">Password</label>
       <input 
@@ -15,5 +20,5 @@
           type="text" 
           class="form-control">
   </div>
-  <button class="btn btn-primary" type="submit">Sign Up</button>
+  <button class="btn btn-primary" [disabled]="!myGroup.valid" type="submit">Sign Up</button>
 </form>
