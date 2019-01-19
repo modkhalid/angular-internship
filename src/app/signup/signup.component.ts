@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl, Validators} from '@angular/forms';
+import { UsernameValidator } from './custom.validator';
 @Component({
   selector: 'sign-up',
   templateUrl: './signup.component.html',
@@ -10,7 +11,7 @@ export class SignupComponent implements OnInit {
   myGroup;
   constructor() { 
     this.myGroup = new FormGroup({
-      username: new FormControl("initial value",[Validators.required,Validators.minLength(5)]),
+      username: new FormControl("initial value",[Validators.required,Validators.minLength(5),UsernameValidator.whiteSpace]),
       password:new FormControl('',Validators.required)
    });
   }
@@ -21,7 +22,7 @@ export class SignupComponent implements OnInit {
   get username(){return this.myGroup.get('username');}
   get password(){return this.myGroup.get('password');}
  
- 
+  onSubmit(val){console.log(val)}
 
   ngOnInit() {
   }

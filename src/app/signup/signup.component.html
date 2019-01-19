@@ -7,11 +7,13 @@
           type="text" 
           class="form-control">
   </div>
-  <div class="alert alert-danger" 
-  *ngIf="myGroup.get('username').touched && !myGroup.get('username').valid"
-  >
-      please provideusername whith min length of 5
-  </div>
+        <div class="alert alert-danger" 
+            *ngIf="myGroup.get('username').touched && !myGroup.get('username').valid" >
+                <p *ngIf="username.errors?.minlength;">please provideusername whith min length of 5</p>
+                <p *ngIf="username.errors[0]?.InvalidWhiteSpace">
+                    white srace error
+                </p>
+        </div>
   <div class="form-group">
       <label for="password">Password</label>
       <input 
