@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormControl, Validators, FormArray} from '@angular/forms';
+import {FormGroup,FormControl, Validators, FormArray, FormBuilder} from '@angular/forms';
 import { UsernameValidator } from './custom.validator';
 import { ViewEncapsulation } from '@angular/compiler/src/core';
 @Component({
@@ -10,20 +10,30 @@ import { ViewEncapsulation } from '@angular/compiler/src/core';
 })
 export class SignupComponent implements OnInit {
   myGroup;
-  constructor() { 
-    this.myGroup = new FormGroup({
-      account:new FormGroup({
-        username: new FormControl("",
-                      [
-                        Validators.required,
-                        Validators.minLength(5),
-                        UsernameValidator.whiteSpace
-                      ],
-                      UsernameValidator.ShouldBeUnique
-                        ),
-        password:new FormControl('',Validators.required)
-      })
-    });
+  // constructor() { 
+  //   this.myGroup = new FormGroup({
+  //     account:new FormGroup({
+  //       username: new FormControl("",
+  //                     [
+  //                       Validators.required,
+  //                       Validators.minLength(5),
+  //                       UsernameValidator.whiteSpace
+  //                     ],
+  //                     UsernameValidator.ShouldBeUnique
+  //                       ),
+  //       password:new FormControl('',Validators.required)
+  //     })
+  //   });
+  // }
+  constructor(fb:FormBuilder){
+    this.myGroup=fb.group({
+      name:["",Validators.required],
+      contact:fb.group({
+        email:[],
+        phone:[]
+      }),
+      topics:fb.FormArray([])
+    })
   }
 
   get username(){return this.myGroup.get('account.username');}
