@@ -7,7 +7,6 @@ import { UsernameValidator } from './custom.validator';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  // let myGroup:any;
   myGroup;
   constructor() { 
     this.myGroup = new FormGroup({
