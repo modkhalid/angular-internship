@@ -11,7 +11,14 @@ export class SignupComponent implements OnInit {
   myGroup;
   constructor() { 
     this.myGroup = new FormGroup({
-      username: new FormControl("initial value",[Validators.required,Validators.minLength(5),UsernameValidator.whiteSpace]),
+      username: new FormControl("",
+                    [
+                      Validators.required,
+                      Validators.minLength(5),
+                      UsernameValidator.whiteSpace
+                    ],
+                    UsernameValidator.ShouldBeUnique
+                      ),
       password:new FormControl('',Validators.required)
    });
   }
