@@ -1,8 +1,8 @@
 <form [formGroup]="myGroup" (ngSubmit)="login()">
-    <div class="alert alert-danger" *ngIf="myGroup.errors">
+    <!-- <div class="alert alert-danger" *ngIf="myGroup.errors">
         Invalid login
-    </div>
-  <div class="form-group">
+    </div> -->
+  <!-- <div class="form-group">
       <label for="username">Username</label>
       <input 
           formControlName="username"
@@ -37,4 +37,18 @@
     *ngIf="!myGroup.get('password').valid && password.touched"
   >password is required</div>
   <button class="btn btn-primary" [disabled]="!myGroup.valid" type="submit">Sign Up</button>
+</form> -->
+
+<form [formGroup]="myGroup"  (ngSubmit)="f()">
+    <div formGroupName="account">
+        <input
+            formControlName="username"
+            class="form-control"/>
+        <input
+            formControlName="password"
+            class="form-control"/>
+
+        <!-- </div> -->
+        <input type="submit" value="submit">
+    </div>
 </form>

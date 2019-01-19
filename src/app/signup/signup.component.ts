@@ -11,20 +11,22 @@ export class SignupComponent implements OnInit {
   myGroup;
   constructor() { 
     this.myGroup = new FormGroup({
-      username: new FormControl("",
-                    [
-                      Validators.required,
-                      Validators.minLength(5),
-                      UsernameValidator.whiteSpace
-                    ],
-                    UsernameValidator.ShouldBeUnique
-                      ),
-      password:new FormControl('',Validators.required)
-   });
+      account:new FormGroup({
+        username: new FormControl("",
+                      [
+                        Validators.required,
+                        Validators.minLength(5),
+                        UsernameValidator.whiteSpace
+                      ],
+                      UsernameValidator.ShouldBeUnique
+                        ),
+        password:new FormControl('',Validators.required)
+      })
+    });
   }
 
-  get username(){return this.myGroup.get('username');}
-  get password(){return this.myGroup.get('password');
+  get username(){return this.myGroup.get('account.username');}
+  get password(){return this.myGroup.get('account.password');
 
 
 }
@@ -38,5 +40,8 @@ export class SignupComponent implements OnInit {
     this.myGroup.setErrors({
       InvalidLogin:true
     })
+  }
+  f(){
+    console.log(this.myGroup)
   }
 }
