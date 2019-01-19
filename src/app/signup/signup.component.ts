@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormControl, Validators} from '@angular/forms';
+import {FormGroup,FormControl, Validators, FormArray} from '@angular/forms';
 import { UsernameValidator } from './custom.validator';
+import { ViewEncapsulation } from '@angular/compiler/src/core';
 @Component({
   selector: 'sign-up',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
+  
 })
 export class SignupComponent implements OnInit {
   myGroup;
@@ -42,5 +44,13 @@ export class SignupComponent implements OnInit {
   }
   f(){
     console.log(this.myGroup)
+  }
+  form=new FormGroup({
+    topics:new FormArray([])
+  })
+
+  addTopics(topic:HTMLInputElement){
+    (this.form.get('topics') as FormArray).push(new FormControl(topic.value))
+    topic.value=""
   }
 }
