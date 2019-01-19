@@ -17,6 +17,11 @@
                     Unique Name
                 </p>
         </div>
+        <div class="alert alert-success"
+            *ngIf="username.pending"
+        >
+            checking for Unique
+        </div>
   <div class="form-group">
       <label for="password">Password</label>
       <input 

@@ -16,7 +16,7 @@ export class UsernameValidator{
                 if((control.value as string).startsWith("modkhalid"))
                     resolve({Unique:true})
                 else
-                    reject(null);
+                    resolve(null);
             },2000)
         });
     }
