@@ -32,7 +32,7 @@ export class SignupComponent implements OnInit {
         email:[],
         phone:[]
       }),
-      topics:fb.FormArray([])
+      topics:fb.array([])
     })
   }
 
