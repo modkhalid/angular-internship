@@ -3,6 +3,7 @@ import { resolve } from 'path';
 import { reject } from 'q';
 
 export class UsernameValidator{
+    
     static whiteSpace(control:AbstractControl):ValidationErrors{
         // <string>control.value
         if((control.value as string).indexOf(' ')>0)
@@ -10,6 +11,7 @@ export class UsernameValidator{
             return {InvalidWhiteSpace:true}
         return null
     }
+    
     static ShouldBeUnique(control:AbstractControl):Promise<ValidationErrors|null>{
         return new Promise((resolve,reject)=>{
             setTimeout(()=>{

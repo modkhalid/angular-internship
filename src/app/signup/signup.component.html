@@ -1,4 +1,7 @@
-<form [formGroup]="myGroup" >
+<form [formGroup]="myGroup" (ngSubmit)="login()">
+    <div class="alert alert-danger" *ngIf="myGroup.errors">
+        Invalid login
+    </div>
   <div class="form-group">
       <label for="username">Username</label>
       <input 

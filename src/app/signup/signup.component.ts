@@ -22,16 +22,21 @@ export class SignupComponent implements OnInit {
       password:new FormControl('',Validators.required)
    });
   }
-  // form=new FormGroup({
-  //   username:new FormControl(),
-  //   password:new FormControl()
-  // });
+
   get username(){return this.myGroup.get('username');}
-  get password(){return this.myGroup.get('password');}
+  get password(){return this.myGroup.get('password');
+
+
+}
  
   onSubmit(val){console.log(val)}
 
   ngOnInit() {
   }
 
+  login=()=>{
+    this.myGroup.setErrors({
+      InvalidLogin:true
+    })
+  }
 }
