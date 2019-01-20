@@ -1,3 +1,4 @@
+import { PostService } from './services/post.service';
 // import { HttpModule } from '@angular/http';
 // import { HttpModule } from '@angular/common/http';
 import { HttpClientModule }    from '@angular/common/http';
@@ -45,6 +46,7 @@ import { PostComponent } from './post/post.component';
   providers: [
     CourseService,
     EmailService,
+    PostService
   ],
   bootstrap: [AppComponent]
 })
