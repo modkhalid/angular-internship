@@ -1,10 +1,12 @@
+<input type="text"
+  (keyup.enter)="addPost(ele)" 
+  #ele
+  class="form-control"
+>
 <ul class="list-group">
   <li 
-    *ngFor="let item of http"
+    *ngFor="let item of posts"
     class="list-group-item">
-    {{item.title}}
-    <b>
-      {{item.body}}
-    </b>
+    {{item.name}}
   </li>
 </ul>
