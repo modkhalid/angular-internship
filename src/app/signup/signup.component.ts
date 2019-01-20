@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl, Validators, FormArray, FormBuilder} from '@angular/forms';
-import { UsernameValidator } from './custom.validator';
-import { ViewEncapsulation } from '@angular/compiler/src/core';
+// import { UsernameValidator } from './custom.validator';
+// import { ViewEncapsulation } from '@angular/compiler/src/core';
 @Component({
   selector: 'sign-up',
   templateUrl: './signup.component.html',

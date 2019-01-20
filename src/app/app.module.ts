@@ -1,7 +1,9 @@
+// import { HttpModule } from '@angular/http';
+// import { HttpModule } from '@angular/common/http';
+import { HttpClientModule }    from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses.component';
@@ -14,6 +16,7 @@ import { PanelComponent } from './panel/panel.component';
 import { InputDirective } from './input.directive';
 import { ContactComponent } from './contact/contact.component';
 import { SignupComponent } from './signup/signup.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { SignupComponent } from './signup/signup.component';
     InputDirective,
     ContactComponent,
     SignupComponent,
+    PostComponent,
     
     
   ],
@@ -34,6 +38,9 @@ import { SignupComponent } from './signup/signup.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    // HttpModule
+    HttpClientModule
+
   ],
   providers: [
     CourseService,
