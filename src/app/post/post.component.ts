@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Response } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-post',
@@ -16,7 +15,7 @@ export class PostComponent implements OnInit {
     })
    }
 
-   addPost(input:HTMLInputElement){
+  addPost(input:HTMLInputElement){
      let post={
       name:input.value
      }
@@ -30,7 +29,23 @@ export class PostComponent implements OnInit {
       this.posts.splice(0,0,post);
      })
      input.value=""
-   }
+    }
+  
+
+    updatePost(post){
+      this.http.patch(this.url+"/"+post.id,JSON.stringify({isRead:true}))
+        .subscribe(response=>{
+          console.log(response)
+        })
+    }
+
+    deletePost(post){
+      this.http.delete(this.url+"/"+post.id)
+        .subscribe(response=>{
+          let index=this.posts.indexOf(post)
+          this.posts.splice(index,1)
+        })
+    }
 
   ngOnInit() {
   }
