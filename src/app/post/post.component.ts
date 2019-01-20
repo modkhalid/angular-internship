@@ -58,7 +58,7 @@ export class PostComponent implements OnInit {
   }
 
   addPost(element:HTMLInputElement){
-    let post={name:element.value}
+    let post={title:element.value}
     this.service.createPost(JSON.stringify(post))
       .subscribe(response=>{
         post['id']=response['id']
@@ -76,11 +76,20 @@ export class PostComponent implements OnInit {
 
   deletePost(post){
     this.service.deletePost(post)
-      .subscribe(response=>{
-        // console.log(response)
-        let index=this.posts.indexOf(post)
-        this.posts.splice(index,1)
-      })
+      .subscribe(
+        response=>{
+          // let index=this.posts.indexOf(post)
+          // this.posts.splice(index,1)
+          console.log(response)
+        },
+        (error:Response)=>{
+          if(error.status===404){
+            alert("file Already deleted")
+          }else{
+            console.log(error)
+          }
+        }
+      )
   }
   ngOnInit() {
     this.service.getPost()
