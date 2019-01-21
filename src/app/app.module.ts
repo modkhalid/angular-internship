@@ -3,7 +3,7 @@ import { PostService } from './services/post.service';
 // import { HttpModule } from '@angular/common/http';
 import { HttpClientModule }    from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,7 @@ import { InputDirective } from './input.directive';
 import { ContactComponent } from './contact/contact.component';
 import { SignupComponent } from './signup/signup.component';
 import { PostComponent } from './post/post.component';
+import { GlobalError } from './common/global-error';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,9 @@ import { PostComponent } from './post/post.component';
   providers: [
     CourseService,
     EmailService,
-    PostService
+    PostService,
+    {provide:ErrorHandler,useClass:GlobalError}
+
   ],
   bootstrap: [AppComponent]
 })
