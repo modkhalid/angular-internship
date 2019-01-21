@@ -1,3 +1,4 @@
+import { NotFoundError } from './../common/not-found-error';
 
 import { PostService } from './../services/post.service';
 import { Component, OnInit } from '@angular/core';
@@ -87,6 +88,16 @@ export class PostComponent implements OnInit {
         //     console.log(error)
         //   }
         // }
+        (error:Response)=>{
+          if (error instanceof NotFoundError){
+            alert("already deleted file")
+            console.log(error)
+
+          }else{
+            console.log(error)
+          }
+
+        }
       )
   }
   ngOnInit() {

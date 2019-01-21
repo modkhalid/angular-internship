@@ -1,3 +1,5 @@
+import { AppError } from './../common/app-error';
+import { NotFoundError } from './../common/not-found-error';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { throwError, Observable } from 'rxjs';
@@ -30,10 +32,12 @@ export class PostService {
       .pipe(
         catchError( err => {
           if (err.status == 404) {
-              alert("something went wrong");
-              // return throwError(err); or below one 
-              return Observable.throw(err)
+              // alert("something went wrong");
+              // // return throwError(err); or below one 
+              // return Observable.throw(err)
+              return throwError(new NotFoundError(err))
           } 
+          return throwError(new AppError(err))
      })
       )
     
