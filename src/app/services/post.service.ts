@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
+import { throwError, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
@@ -31,7 +31,8 @@ export class PostService {
         catchError( err => {
           if (err.status == 404) {
               alert("something went wrong");
-              return throwError(err);
+              // return throwError(err); or below one 
+              return Observable.throw(err)
           } 
      })
       )
