@@ -1,10 +1,8 @@
 import { BadError } from './../common/bad-error';
 import { AppError } from './../common/app-error';
 import { NotFoundError } from './../common/not-found-error';
-
 import { PostService } from './../services/post.service';
 import { Component, OnInit } from '@angular/core';
-
 
 @Component({
   selector: 'app-post',
@@ -60,7 +58,7 @@ export class PostComponent implements OnInit {
 
   addPost(element:HTMLInputElement){
     let post={title:element.value}
-    this.service.createPost(JSON.stringify(post))
+    this.service.create(JSON.stringify(post))
       .subscribe(response=>{
         post['id']=response['id']
         this.posts.splice(0,0,post);
@@ -75,7 +73,7 @@ export class PostComponent implements OnInit {
     element.value=""
   }
   updatePost(post){
-    this.service.updatePost(post)
+    this.service.update(post)
       .subscribe(response=>{
           console.log(response)
         },
@@ -87,7 +85,7 @@ export class PostComponent implements OnInit {
 
 
   deletePost(post){
-    this.service.deletePost(post)
+    this.service.delete(post)
       .subscribe(
         response=>{
           let index=this.posts.indexOf(post)
@@ -114,7 +112,7 @@ export class PostComponent implements OnInit {
       )
   }
   ngOnInit() {
-    this.service.getPost()
+    this.service.get()
       .subscribe(response=>{
         this.posts=response;
 
