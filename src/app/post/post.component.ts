@@ -1,9 +1,7 @@
-// import { element } from 'protractor';
+
 import { PostService } from './../services/post.service';
-// import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-// import { Response } from 'selenium-webdriver/http';
-// import { Response } from 'selenium-webdriver/http';
+
 
 @Component({
   selector: 'app-post',
@@ -78,17 +76,17 @@ export class PostComponent implements OnInit {
     this.service.deletePost(post)
       .subscribe(
         response=>{
-          // let index=this.posts.indexOf(post)
-          // this.posts.splice(index,1)
+          let index=this.posts.indexOf(post)
+          this.posts.splice(index,1)
           console.log(response)
         },
-        (error:Response)=>{
-          if(error.status===404){
-            alert("file Already deleted")
-          }else{
-            console.log(error)
-          }
-        }
+        // (error:Response)=>{
+        //   if(error.status===404){
+        //     alert("file Already deleted")
+        //   }else{
+        //     console.log(error)
+        //   }
+        // }
       )
   }
   ngOnInit() {

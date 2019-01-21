@@ -1,6 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+// import { map,catchError } from 'rxjs/operators';
+// import 'rxjs/add/operators/catch';
+import { Observable, throwError } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+import { map, catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -25,6 +29,15 @@ export class PostService {
   }
 
   deletePost(post){
-    return this.http.delete("https://jsonplaceholder.typicode/"+post.id)
+    return this.http.delete("jhdsfjkdhfjkdshjkf"+"/"+4800)
+      .pipe(
+        catchError( err => {
+          if (err.status == 404) {
+              alert("something went wrong");
+              return throwError(err);
+          } 
+     })
+      )
+    
   }
 }
