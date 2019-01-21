@@ -4,7 +4,7 @@ import { NotFoundError } from './../common/not-found-error';
 import { HttpClient } from '@angular/common/http';
 import { Injectable, ErrorHandler } from '@angular/core';
 import { throwError, Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +20,12 @@ export class AllService {
 
   create(post){
     return this.http.post(this.url,post)
-    .pipe(catchError(this.ErrorHandlerMethod))
+    .pipe(
+        //********dont use map for json  */
+        map(response=>{response.json()}),
+        //after angular two
+        // response object is Alway in json array
+        catchError(this.ErrorHandlerMethod))
   }
 
   update(post){
