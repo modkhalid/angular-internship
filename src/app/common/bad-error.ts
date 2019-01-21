@@ -1,4 +1,4 @@
 import { AppError } from './app-error';
-export class NotFoundError extends AppError{
+export class BadError extends AppError{
     constructor(err){super(err)}
 }

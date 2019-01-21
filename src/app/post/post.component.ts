@@ -1,3 +1,5 @@
+import { BadError } from './../common/bad-error';
+import { AppError } from './../common/app-error';
 import { NotFoundError } from './../common/not-found-error';
 
 import { PostService } from './../services/post.service';
@@ -62,7 +64,14 @@ export class PostComponent implements OnInit {
       .subscribe(response=>{
         post['id']=response['id']
         this.posts.splice(0,0,post);
-      })
+      },
+      (error:AppError)=>{
+        if (error instanceof BadError)
+          alert("bad error")
+        else 
+          alert("common Error")
+      }
+      )
     element.value=""
   }
   updatePost(post){
@@ -88,7 +97,7 @@ export class PostComponent implements OnInit {
         //     console.log(error)
         //   }
         // }
-        (error:Response)=>{
+        (error:AppError)=>{
           if (error instanceof NotFoundError){
             alert("already deleted file")
             console.log(error)

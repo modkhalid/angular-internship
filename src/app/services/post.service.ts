@@ -1,3 +1,4 @@
+import { BadError } from './../common/bad-error';
 import { AppError } from './../common/app-error';
 import { NotFoundError } from './../common/not-found-error';
 import { HttpClient } from '@angular/common/http';
@@ -20,7 +21,15 @@ export class PostService {
   }
 
   createPost(post){
-    return this.http.post(this.url,post);
+    return this.http.post(this.url,post)
+      .pipe(
+        catchError((err:Response)=>{
+          if (err.status==400){
+            return throwError(new BadError(err))
+          }
+          return throwError(new AppError(err))
+        })
+      )
   }
 
   updatePost(post){
