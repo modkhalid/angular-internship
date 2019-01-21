@@ -78,7 +78,11 @@ export class PostComponent implements OnInit {
     this.service.updatePost(post)
       .subscribe(response=>{
           console.log(response)
-        })
+        },
+        (error)=>{
+          throw error;
+        }
+        )
   }
 
 

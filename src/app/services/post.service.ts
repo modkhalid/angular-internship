@@ -34,7 +34,9 @@ export class PostService {
   }
 
   updatePost(post){
-    return this.http.patch(this.url+"/"+post.id,{isread:true})
+    return this.http.patch("abcd"+this.url+"/"+post.id,{isread:true}).pipe(
+      
+    )
   }
 
   deletePost(post){
