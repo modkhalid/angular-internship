@@ -7,9 +7,6 @@
   <li 
     *ngFor="let item of posts"
     class="list-group-item">
-    <!-- <p *ngIf="item.isRead">
-      is Read true
-    </p> -->
     <button class="btn btn-default btn-sm"
       (click)=(updatePost(item))
     >Update</button> 

@@ -1,6 +1,6 @@
-import { BadError } from './../common/bad-error';
-import { AppError } from './../common/app-error';
-import { NotFoundError } from './../common/not-found-error';
+// import { BadError } from './../common/bad-error';
+// import { AppError } from './../common/app-error';
+// import { NotFoundError } from './../common/not-found-error';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AllService } from './all-service';

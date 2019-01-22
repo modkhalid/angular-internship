@@ -58,12 +58,17 @@ export class PostComponent implements OnInit {
 
   addPost(element:HTMLInputElement){
     let post={title:element.value}
+    this.posts.splice(0,0,post)
+
+
     this.service.create(JSON.stringify(post))
       .subscribe(response=>{
         post['id']=response['id']
-        this.posts.splice(0,0,post);
+        
       },
       (error:AppError)=>{
+        this.posts.splice(0,1);
+
         if (error instanceof BadError)
           alert("bad error")
         else 
@@ -85,11 +90,13 @@ export class PostComponent implements OnInit {
 
 
   deletePost(post){
+    let index=this.posts.indexOf(post)
+    this.posts.splice(index,1)
+
     this.service.delete(post)
       .subscribe(
         response=>{
-          let index=this.posts.indexOf(post)
-          this.posts.splice(index,1)
+          
           console.log(response)
         },
         // (error:Response)=>{
@@ -100,6 +107,8 @@ export class PostComponent implements OnInit {
         //   }
         // }
         (error:AppError)=>{
+
+          this.posts.splice(index,0,post)
           if (error instanceof NotFoundError){
             alert("already deleted file")
             console.log(error)

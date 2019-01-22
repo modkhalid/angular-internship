@@ -22,7 +22,7 @@ export class AllService {
     return this.http.post(this.url,post)
     .pipe(
         //********dont use map for json  */
-        map(response=>{response.json()}),
+        // map(response=>{response.json()}),
         //after angular two
         // response object is Alway in json array
         catchError(this.ErrorHandlerMethod))
@@ -33,7 +33,7 @@ export class AllService {
   }
 
   delete(post){
-    return this.http.delete("jhdsfjkdhfjkdshjkf"+"/"+post.id)
+    return this.http.delete(this.url+"/"+post.id)
       .pipe(catchError(this.ErrorHandlerMethod))
     
   }
