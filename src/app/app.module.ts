@@ -19,6 +19,12 @@ import { ContactComponent } from './contact/contact.component';
 import { SignupComponent } from './signup/signup.component';
 import { PostComponent } from './post/post.component';
 import { GlobalError } from './common/global-error';
+import { HomeComponent } from './home/home.component';
+import { GithubComponent } from './github/github.component';
+import { GithubProfileComponent } from './github-profile/github-profile.component';
+import { GithubPostComponent } from './github-post/github-post.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -32,6 +38,11 @@ import { GlobalError } from './common/global-error';
     ContactComponent,
     SignupComponent,
     PostComponent,
+    HomeComponent,
+    GithubComponent,
+    GithubProfileComponent,
+    GithubPostComponent,
+    NotFoundComponent,
     
     
   ],
@@ -41,7 +52,30 @@ import { GlobalError } from './common/global-error';
     FormsModule,
     ReactiveFormsModule,
     // HttpModule
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {
+        path:"",
+        component:HomeComponent
+      },
+      {
+        path:"github",
+        component:GithubComponent
+      },
+      {
+        path:"github/:username",
+        component:GithubProfileComponent
+      },
+      {
+        path:"github/post",
+        component:GithubPostComponent
+      },
+      {
+        path:"**",
+        component:NotFoundComponent
+      },
+    ])
+
 
   ],
   providers: [
