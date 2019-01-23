@@ -6,6 +6,6 @@ import { Injectable } from '@angular/core';
 export class GithubFollowersService extends AllService {
 
   constructor(http: HttpClient) {
-    super('https://api.github.com/users/anasM0hammad/followers', http);
+    super('https://api.github.com/users/modkhalid/followers', http);
   }
 }

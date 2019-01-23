@@ -1,6 +1,6 @@
 import { GithubFollowersService } from './../services/github-followers.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-github-profile',
@@ -9,8 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GithubProfileComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute,private service:GithubFollowersService) { }
+  constructor(private router:Router,private route:ActivatedRoute) { }
 
+  OnSubmit(){
+    // console.log(this.router.createUrlTree(['/team', 33, 'user', 11]));
+    // this.router.navigateByUrl("/github/follower");
+    this.router.navigate(['/github/1'])
+    console.log(this.router.url)
+  }
   ngOnInit() {
     this.route.paramMap
       .subscribe(param=>{
