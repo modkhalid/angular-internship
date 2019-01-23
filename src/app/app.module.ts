@@ -1,6 +1,5 @@
+import { GithubFollowersService } from './services/github-followers.service';
 import { PostService } from './services/post.service';
-// import { HttpModule } from '@angular/http';
-// import { HttpModule } from '@angular/common/http';
 import { HttpClientModule }    from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -25,6 +24,7 @@ import { GithubProfileComponent } from './github-profile/github-profile.componen
 import { GithubPostComponent } from './github-post/github-post.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RouterModule } from '@angular/router';
+import { NabarComponent } from './nabar/nabar.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +43,7 @@ import { RouterModule } from '@angular/router';
     GithubProfileComponent,
     GithubPostComponent,
     NotFoundComponent,
+    NabarComponent,
     
     
   ],
@@ -59,16 +60,17 @@ import { RouterModule } from '@angular/router';
         component:HomeComponent
       },
       {
-        path:"github",
-        component:GithubComponent
-      },
-      {
-        path:"github/:username",
+        path:"github/:id/:username",
         component:GithubProfileComponent
       },
       {
+        path:"github",
+        component:GithubComponent
+      },
+      
+      {
         path:"github/post",
-        component:GithubPostComponent
+        component:PostComponent
       },
       {
         path:"**",
@@ -82,7 +84,8 @@ import { RouterModule } from '@angular/router';
     CourseService,
     EmailService,
     PostService,
-    {provide:ErrorHandler,useClass:GlobalError}
+    {provide:ErrorHandler,useClass:GlobalError},
+    GithubFollowersService
 
   ],
   bootstrap: [AppComponent]
