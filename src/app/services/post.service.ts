@@ -11,7 +11,7 @@ import { AllService } from './all-service';
 })
 export class PostService extends AllService{
   constructor(http:HttpClient) {
-    super('https://jsonplaceholder.typicode.com/posts',http)
+    super('https://api.github.com/users/modkhalid/followers',http)
    }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PhpService } from '../services/php.service';
 
 @Component({
   selector: 'app-github-post',
@@ -7,8 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GithubPostComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:PhpService) { }
 
+  create(el){
+    // console.log(el.value);
+    let post={'email':el.value};
+    this.service.create(JSON.stringify(post))
+      .subscribe(
+        response=>{
+          console.log(response);
+        }
+      )
+
+
+
+    el.value="";
+  }
   ngOnInit() {
   }
 

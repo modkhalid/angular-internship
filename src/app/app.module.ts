@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { GithubFollowersService } from './services/github-followers.service';
 import { PostService } from './services/post.service';
 import { HttpClientModule }    from '@angular/common/http';
@@ -25,6 +26,12 @@ import { GithubPostComponent } from './github-post/github-post.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RouterModule } from '@angular/router';
 import { NabarComponent } from './nabar/nabar.component';
+import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './login/login.component';
+import { NoAccessComponent } from './no-access/no-access.component';
+import { OrderService } from './services/order.service';
+import { PhpService } from './services/php.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +51,12 @@ import { NabarComponent } from './nabar/nabar.component';
     GithubPostComponent,
     NotFoundComponent,
     NabarComponent,
+    AdminComponent,
+    LoginComponent,
+    NoAccessComponent,
+    NavbarComponent,
+
+    
     
     
   ],
@@ -60,6 +73,10 @@ import { NabarComponent } from './nabar/nabar.component';
         component:HomeComponent
       },
       {
+        path:'php',
+        component:GithubPostComponent
+      },
+      {
         path:"github/:id/:username",
         component:GithubProfileComponent
       },
@@ -71,6 +88,18 @@ import { NabarComponent } from './nabar/nabar.component';
       {
         path:"github/post",
         component:PostComponent
+      },
+      {
+        path:'admin',
+        component:AdminComponent
+      },
+      {
+        path:'login',
+        component:LoginComponent
+      },
+      {
+        path:'no-access',
+        component:NoAccessComponent
       },
       {
         path:"**",
@@ -85,7 +114,12 @@ import { NabarComponent } from './nabar/nabar.component';
     EmailService,
     PostService,
     {provide:ErrorHandler,useClass:GlobalError},
-    GithubFollowersService
+    GithubFollowersService,
+    AuthService,
+    OrderService,
+    PhpService
+    
+
 
   ],
   bootstrap: [AppComponent]

@@ -18,7 +18,7 @@ export class ContactComponent implements OnInit {
   }
   onChange(val){ console.log(val)}
   onSubmit(form:any){
-    console.log(form)
+    console.log(form.value);
   }
 
 }

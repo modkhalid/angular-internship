@@ -17,7 +17,7 @@ export class GithubComponent implements OnInit {
 
   ngOnInit() {
     // this.route.paramMap.subscribe();
-    console.log(this.route.snapshot.queryParamMap.get('name'))
+    // console.log(this.route.snapshot.queryParamMap.get('name'))
     this.service.get()
       .subscribe(followers => this.followers =followers);
   }
